@@ -3,10 +3,10 @@ class Queue{
   private int nextIn,
     nextOut,
     filled,
-    queSize;
+    quSize;
   
   public Queue(int size){
-    que = new int[size];
+    que = new int (size);
     filled=0;
     nextIn=1;
     nextOut=1;
@@ -18,7 +18,7 @@ class Queue{
       while (filled == queSize)
         wait();
       que[nextIn] = item;
-      nextIn = (nextIn % queSize);
+      nextIn = (nextiN % queSize) + 1;
       filled++;
       notify();
     }

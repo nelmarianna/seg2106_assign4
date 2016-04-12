@@ -1,44 +1,55 @@
-class Queue{
-  private int[] que;
-  private int nextIn,
-    nextOut,
-    filled,
-    queSize;
-  
-  public Queue(int size){
-    que = new int[size];
-    filled=0;
-    nextIn=1;
-    nextOut=1;
-    queSize=size;
-  } ///end of queue constructor
-  
-  public synchronized void deposit (int item){
-    try{
-      while (filled == queSize)
-        wait();
-      que[nextIn] = item;
-      nextIn = (nextIn % queSize);
-      filled++;
-      notify();
-    }
-    catch(InterruptedException e){}
-  } //end of deposit
-  
-  public synchronized int fetch(){
-    int item=0;
-    try{
-      while (filled==0)
-        wait();
-      item = que[nextOut];
-      nextOut = (nextOut % queSize) + 1;
-      filled--;
-      notify();
-      }
-catch(InterruptedException e){}
-return item;
-}//end of fetch
+public class Queue {
+ private LinkedList list;
+ 
+ // Queue constructor
+ public Queue()
+ {
+  // Create a new LinkedList.
+  list = new LinkedList();
+ }
 
-}//end of class
+ public boolean isEmpty()
+ {
+  return (list.size() == 0);
+ }
 
+ public void enqueue(Object item)
+ // Post: An item is added to the back of the queue.
+ {
+  // Append the item to the end of our linked list.
+  list.add(item);
+ }
+
+ public Object dequeue()
+ // Pre: this.isEmpty() == false
+ // Post: The item at the front of the queue is returned and 
+ //         deleted from the queue. Returns null if precondition
+ //         not met.
+ {
+  // Store a reference to the item at the front of the queue
+  //   so that it does not get garbage collected when we 
+  //   remove it from the list.
+  // Note: list.get(...) returns null if item not found at
+  //   specified index. See postcondition.
+  Object item = list.get(1);
+  // Remove the item from the list.
+  // My implementation of the linked list is based on the
+  //   J2SE API reference. In both, elements start at 1,
+  //   unlike arrays which start at 0.
+  list.remove(1);
   
+  // Return the item
+  return item;
+ }
+
+ public Object peek()
+ // Pre: this.isEmpty() == false
+ // Post: The item at the front of the queue is returned and 
+ //         deleted from the queue. Returns null if precondition
+ //         not met.
+ {
+  // This method is very similar to dequeue().
+  // See Queue.dequeue() for comments.
+  return list.get(1);
+ }
+}

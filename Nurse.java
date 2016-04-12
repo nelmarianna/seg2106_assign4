@@ -1,35 +1,9 @@
 import java.util.Random;
 
-public class Nurse implements Runnable{
 
-<<<<<<< HEAD
-	
-	public void run() {
-		
-			synchronized(this){
-			
-			while(!vars.get().isEmpty()){
-			
-			System.out.print("xxx");
-			  p=(Patient)vars.get().dequeue();
-			
-			  if (r.nextInt(100) < 15)
-			  {
-			    vars.getNEA().enqueue(p);
-			  }
-			  else
-			  {
-				  vars.getCW().enqueue(p);
-			  }
-			  this.notify();
-			}
-//			  
-			}
-		 
-		
-	}
-}
-=======
+public class Nurse implements Runnable {
+	String group;
+
  Globals vars;
  Patient p;
  Random r = new Random();
@@ -80,4 +54,4 @@ public class Nurse implements Runnable{
   
  }
 
->>>>>>> abf03943adda38c1429778466cc0da2c54686f22
+

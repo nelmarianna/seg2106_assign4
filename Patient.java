@@ -1,11 +1,8 @@
 
-public class Patient implements Runnable{
+public class Patient {
+	String category;
 	
 	Patient(){
-	}
-	
-	public void run() {
-		// TODO Auto-generated method stub
 		
 	}
 

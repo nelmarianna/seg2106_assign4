@@ -11,7 +11,8 @@ public class Nurse implements Runnable{
   Random rn = new Random();
 long time = ManagementFactory.getThreadMXBean().getThreadCpuTime(Thread.currentThread().getId());
 
-DoctorB doctor;
+DoctorB doctorB;
+DoctorA doctorA;
 
 
  Nurse(Globals vars)
@@ -21,7 +22,8 @@ DoctorA docA= new DoctorA(vars);
    this.vars=vars;
    (new Thread(this)).start();
    
-   doctor = vars.getDoctor();
+   doctorB = vars.getDoctorB();
+   doctorA = vars.getDoctorA();
 
  }
 
@@ -69,7 +71,7 @@ DoctorA docA= new DoctorA(vars);
  public void run() {
   
 
-   synchronized(doctor){
+   synchronized(doctorB){
 
    
    while(!vars.get().isEmpty()){
@@ -107,7 +109,8 @@ DoctorA docA= new DoctorA(vars);
      }
 
      System.out.println("merp");
-     doctor.notify();
+     doctorB.notify();
+     doctorA.notify();
 
    }
 //     

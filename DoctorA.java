@@ -10,6 +10,7 @@ public class DoctorA implements Runnable {
 	{
 		this.vars=vars;
 		(new Thread(this)).start();
+		vars.setDoctorA(this);
 		
 	}
 
@@ -17,6 +18,12 @@ public class DoctorA implements Runnable {
 	public void run() {
 
 		synchronized(this){
+			 try {
+			       System.out.println("red?");
+			         this.wait();
+			         System.out.println("efkvjefbvewjhkbvwko");
+			        } catch(InterruptedException e) {
+			        }
 		
 			while(!vars.getNEA().isEmpty()){
 			

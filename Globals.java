@@ -7,6 +7,7 @@ public class Globals {
  Queue test;
  boolean done = false;
  DoctorB doctorB;
+ DoctorA doctorA;
  
  public void set(Queue incoming){
   this.incoming=incoming;
@@ -30,10 +31,10 @@ public class Globals {
   
  }
  
-  public void setDoctor(DoctorB d){
+  public void setDoctorB(DoctorB d){
   doctorB =d;
  }
- public DoctorB getDoctor(){
+ public DoctorB getDoctorB(){
   return doctorB;
  }
  
@@ -43,4 +44,12 @@ public class Globals {
  public Queue getTest(){
   return test;
  }
+ 
+ public void setDoctorA(DoctorA d){
+ doctorA =d;
 }
+public DoctorA getDoctorA(){
+ return doctorA;
+}
+}
+

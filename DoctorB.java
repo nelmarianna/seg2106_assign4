@@ -15,7 +15,7 @@ public class DoctorB implements Runnable{
    this.vars=vars;
   (new Thread(this)).start();
   
-    vars.setDoctor(this);
+    vars.setDoctorB(this);
  }
 
  

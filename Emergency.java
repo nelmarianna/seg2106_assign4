@@ -1,6 +1,7 @@
 
 public class Emergency implements Runnable{
 
+<<<<<<< HEAD
 	
 	//has all the queues here???
 	public static void main(String [] args){
@@ -25,4 +26,8 @@ public class Emergency implements Runnable{
 	System.out.println("test");
 		
 	}
+=======
+ //;pllol
+ //has all the queues here???
+>>>>>>> 3565d16e23860bc1174887301466e00244f9f93e
 }

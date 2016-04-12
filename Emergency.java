@@ -9,6 +9,7 @@ public class Emergency{
   public Emergency(Patient[] p){
     
     q = new Queue();
+    dummy = new Queue();
     
     for(int i=0; i< p.length; i++)
     {
@@ -16,11 +17,16 @@ public class Emergency{
     }
     
     vars.set(q);
+    vars.setCW(dummy);
+    vars.setNEA(dummy);
     
-    nOne = new Nurse();
-   nTwo = new Nurse();
-   nThree = new Nurse();
+    nOne = new Nurse(vars);
+    vars.done = true;
+   nTwo = new Nurse(vars);
+   nThree = new Nurse(vars);
   }
+  
+
  
 
 }

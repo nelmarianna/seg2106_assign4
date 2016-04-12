@@ -6,8 +6,9 @@ public class Nurse implements Runnable{
  Patient p;
  Random r = new Random();
  
- Nurse()
+ Nurse(Globals vars)
  {
+   this.vars=vars;
   (new Thread(this)).start();
   
  }
@@ -15,10 +16,14 @@ public class Nurse implements Runnable{
  
  public void run() {
   try {
-   
+     synchronized(this){
+       if (vars.done==true)
+         System.out.println(vars.get().isEmpty())
+            this.wait();      
+     }
    while(!vars.get().isEmpty()){
-   
-   Thread.sleep(250);
+   System.out.println(vars.get().isEmpty());
+
      p=(Patient)vars.get().dequeue();
    
      if (r.nextInt(100) < 15)
@@ -29,7 +34,13 @@ public class Nurse implements Runnable{
      {
       vars.getCW().enqueue(p);
      }
-     this.notifyAll();
+     try{
+     synchronized(this){
+       this.notify();
+     }}
+     catch (Exception e) {
+        // ...
+    }     
    }
   } catch (InterruptedException e) {
    // TODO Auto-generated catch block

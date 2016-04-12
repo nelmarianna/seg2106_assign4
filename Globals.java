@@ -4,7 +4,8 @@ public class Globals {
  Queue incoming;
  Queue CW;
  Queue NEA;
- 
+ boolean done = false;
+   
  public void set(Queue incoming){
   this.incoming=incoming;
  }

@@ -18,7 +18,7 @@ DoctorA doctorA;
  Nurse(Globals vars)
  {
   
-DoctorA docA= new DoctorA(vars);
+
    this.vars=vars;
    (new Thread(this)).start();
    
@@ -72,7 +72,7 @@ DoctorA docA= new DoctorA(vars);
   
 
    synchronized(doctorB){
-
+	   synchronized(doctorA){
    
    while(!vars.get().isEmpty()){
    
@@ -107,10 +107,11 @@ DoctorA docA= new DoctorA(vars);
         } catch(InterruptedException e) {
         }
      }
-
+     doctorA.notify();
+   }
      System.out.println("merp");
      doctorB.notify();
-     doctorA.notify();
+    
 
    }
 //     

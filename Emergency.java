@@ -1,5 +1,5 @@
 
-public class Emergency {
+public class Emergency{
 
 
   Queue q = new Queue();
@@ -9,7 +9,6 @@ public class Emergency {
   }
  //;pllol
  //has all the queues here???
-
  
  //has all the queues here???
  public static void main(String [] args){
@@ -25,6 +24,7 @@ public class Emergency {
     //doctor group b treats CW queue
     //if NEA needs tests-> gets added to lab queue
  }
+
 
 
 

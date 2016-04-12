@@ -1,23 +1,67 @@
 import java.util.Random;
 
 public class Nurse implements Runnable{
-	Globals vars;
-	Patient p;
-	Random r = new Random();
-	
-	Nurse()
-	{
-		(new Thread(new Nurse())).start();
-		
-	}
 
+<<<<<<< HEAD
+ Globals vars;
+ Patient p;
+ Random r = new Random();
+ 
+ Nurse(Globals vars)
+ {
+   this.vars=vars;
+  (new Thread(this)).start();
+  
+ }
+
+ 
+ public void run() {
+  try {
+     synchronized(this){
+       if (vars.done==true)
+         System.out.println(vars.get().isEmpty())
+            this.wait();      
+     }
+   while(!vars.get().isEmpty()){
+   System.out.println(vars.get().isEmpty());
+
+     p=(Patient)vars.get().dequeue();
+   
+     if (r.nextInt(100) < 15)
+     {
+       vars.getNEA().enqueue(p);
+     }
+     else
+     {
+      vars.getCW().enqueue(p);
+     }
+     try{
+     synchronized(this){
+       this.notify();
+     }}
+     catch (Exception e) {
+        // ...
+    }     
+   }
+  } catch (InterruptedException e) {
+   // TODO Auto-generated catch block
+   e.printStackTrace();
+  }
+  
+ }
+
+  
+ }
+
+=======
 	
 	public void run() {
-		try {
+		
+			synchronized(this){
 			
 			while(!vars.get().isEmpty()){
 			
-			Thread.sleep(250);
+			System.out.print("xxx");
 			  p=(Patient)vars.get().dequeue();
 			
 			  if (r.nextInt(100) < 15)
@@ -28,12 +72,12 @@ public class Nurse implements Runnable{
 			  {
 				  vars.getCW().enqueue(p);
 			  }
-			  this.notifyAll();
+			  this.notify();
 			}
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//			  
+			}
+		 
 		
 	}
 }
+>>>>>>> upstream/master

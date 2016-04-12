@@ -5,7 +5,6 @@ public class Emergency{
   Queue q;
   Queue dummy;
   Nurse nOne, nTwo, nThree;
-  DoctorB doc;
   
   public Emergency(Patient[] p){
     
@@ -20,14 +19,14 @@ public class Emergency{
     vars.set(q);
     vars.setCW(dummy);
     vars.setNEA(dummy);
-
-    doc = new DoctorB(vars);
-    nOne = new Nurse(vars);
     
+<<<<<<< HEAD
+    nOne = new Nurse(vars);
     vars.done = true;
-//   nTwo = new Nurse(vars);
-  // nThree = new Nurse(vars);
-
+   nTwo = new Nurse(vars);
+   nThree = new Nurse(vars);
+=======
+>>>>>>> upstream/master
   }
   
 

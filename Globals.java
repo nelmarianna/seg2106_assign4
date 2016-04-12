@@ -5,7 +5,8 @@ public class Globals {
  Queue CW;
  Queue NEA;
  boolean done = false;
-   
+ DoctorB doctorB;
+ 
  public void set(Queue incoming){
   this.incoming=incoming;
  }
@@ -27,4 +28,12 @@ public class Globals {
   return NEA;
   
  }
+ 
+  public void setDoctor(DoctorB d){
+  doctorB =d;
+ }
+ public DoctorB getDoctor(){
+  return doctorB;
+ }
+ 
 }

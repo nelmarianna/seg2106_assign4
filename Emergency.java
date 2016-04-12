@@ -11,6 +11,7 @@ public class Emergency implements Runnable{
 		//three new threads one per nurse???
 		(new Thread(new Emergency())).start();
 		(new Thread(new Emergency())).start();
+		(new Thread(new Emergency())).start();
 		
 		//nurse classifies CW or NEA
 				//added to queue

@@ -4,6 +4,7 @@ public class Globals {
  Queue incoming;
  Queue CW;
  Queue NEA;
+ Queue test;
  boolean done = false;
  DoctorB doctorB;
  
@@ -36,4 +37,10 @@ public class Globals {
   return doctorB;
  }
  
+ public void setTest(Queue test){
+  this.test=test;
+ }
+ public Queue getTest(){
+  return test;
+ }
 }

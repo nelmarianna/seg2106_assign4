@@ -13,8 +13,11 @@ long time = ManagementFactory.getThreadMXBean().getThreadCpuTime(Thread.currentT
 
 DoctorB doctor;
 
+
  Nurse(Globals vars)
  {
+  
+DoctorA docA= new DoctorA(vars);
    this.vars=vars;
    (new Thread(this)).start();
    
@@ -65,7 +68,9 @@ DoctorB doctor;
  
  public void run() {
   
+
    synchronized(doctor){
+
    
    while(!vars.get().isEmpty()){
    
@@ -100,8 +105,10 @@ DoctorB doctor;
         } catch(InterruptedException e) {
         }
      }
+
      System.out.println("merp");
      doctor.notify();
+
    }
 //     
    }

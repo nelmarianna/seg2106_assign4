@@ -5,17 +5,19 @@ public class Nurse implements Runnable{
 	Patient p;
 	Random r = new Random();
 	
-	Nurse()
+	public Nurse(Globals vars)
 	{
-		(new Thread(new Nurse())).start();
+		this.vars=vars;
+		(new Thread(this)).start();
 		
 	}
 
 	
 	public void run() {
 		try {
+			System.out.print(vars.get().isEmpty());
 			
-			while(!vars.get().isEmpty()){
+			while(!((vars.get()).isEmpty())){
 			
 			Thread.sleep(250);
 			  p=(Patient)vars.get().dequeue();

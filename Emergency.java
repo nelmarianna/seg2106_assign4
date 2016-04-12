@@ -1,6 +1,4 @@
-
 public class Emergency{
-
 
   Queue q = new Queue();
   

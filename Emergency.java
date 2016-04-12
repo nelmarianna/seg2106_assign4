@@ -5,15 +5,15 @@ public class Emergency{
   Queue q = new Queue();
   Nurse nOne, nTwo, nThree;
   
-  public Emergency(Patient p){
-    q.enqueue(p);
-  }
-  public void Setting(){
-	  vars.set(q);
-  }
-  
-  public void Categorize(){
-	  nOne = new Nurse();
+  public Emergency(Patient[] p){
+    for(int i=0; i< p.length; i++)
+    {
+	  q.enqueue(p[i]);
+    }
+    
+    vars.set(q);
+    
+    nOne = new Nurse();
 	  nTwo = new Nurse();
 	  nThree = new Nurse();
   }

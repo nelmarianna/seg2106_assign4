@@ -1,8 +1,10 @@
 
 public class Patient {
+	String category;
 	
-	Patient(){
+	Patient(String category){
 		//patient object to put in queues
+		this.category= category;
 	}
 
 }

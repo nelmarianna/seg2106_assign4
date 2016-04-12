@@ -20,9 +20,6 @@ public class Emergency{
     vars.setCW(dummy);
     vars.setNEA(dummy);
     
-    nOne = new Nurse(vars);
-	  nTwo = new Nurse(vars);
-	  nThree = new Nurse(vars);
   }
  
 

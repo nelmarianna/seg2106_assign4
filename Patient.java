@@ -1,10 +1,8 @@
 
 public class Patient {
 
-
  Patient(){
 
  }
-
 
 }

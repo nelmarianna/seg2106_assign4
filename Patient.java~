@@ -1,10 +1,17 @@
 
 public class Patient {
+<<<<<<< HEAD
+
+ Patient(){
+
+ }
+
+=======
 	String category;
 	
-	Patient(String category){
+	Patient(){
 		
-		this.category= category;
 	}
+>>>>>>> upstream/master
 
 }

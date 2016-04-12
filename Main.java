@@ -3,9 +3,15 @@ public class Main {
 
   public static void main(String args[]) {
   
-  Patient p1 = new Patient();
-  Patient p2 = new Patient();
-  Patient p3 = new Patient();
+  Patient [] p =new Patient[10];
+  
+  for(int i=0; i< p.length; i++)
+  {
+   p[i]= new Patient();
+  }
+  //Random r = new Random();
+ // System.out.println("hi  " + r.nextInt(100));
+   Emergency e = new Emergency(p);
 
   }
 }

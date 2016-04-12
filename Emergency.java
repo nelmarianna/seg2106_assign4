@@ -1,4 +1,3 @@
-
 public class Emergency{
 
   Globals vars= new Globals();

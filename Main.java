@@ -7,9 +7,10 @@ public class Main {
   
   for(int i=0; i< p.length; i++)
   {
-	  p[i]= new Patient();
+   p[i]= new Patient();
   }
-  
+  //Random r = new Random();
+ // System.out.println("hi  " + r.nextInt(100));
    Emergency e = new Emergency(p);
 
   }

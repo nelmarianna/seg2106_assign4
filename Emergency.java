@@ -2,10 +2,14 @@
 public class Emergency{
 
   Globals vars= new Globals();
-  Queue q = new Queue();
+  Queue q;
+  Queue dummy;
   Nurse nOne, nTwo, nThree;
   
   public Emergency(Patient[] p){
+    
+    q = new Queue();
+    
     for(int i=0; i< p.length; i++)
     {
    q.enqueue(p[i]);

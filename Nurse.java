@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class Nurse implements Runnable{
+
  Globals vars;
  Patient p;
  Random r = new Random();
@@ -36,4 +37,7 @@ public class Nurse implements Runnable{
   }
   
  }
-}
+
+  
+ }
+

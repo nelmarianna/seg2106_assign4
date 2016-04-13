@@ -89,6 +89,11 @@ DoctorA doctorA;
           vars.getNEA().enqueue(p);
          long timea = System.currentTimeMillis() - startTime;
          System.out.println("Nurse: Classification time nea " + timea + " ms");
+         synchronized(doctorA)
+  	   {
+  		   	doctorA.notify();
+  	   }
+      
        } catch(InterruptedException e) {
         }
          
@@ -101,22 +106,19 @@ DoctorA doctorA;
              vars.getCW().enqueue(p);
             long timea = System.currentTimeMillis() - startTime;
          System.out.println("Nurse: Classification time cw " + timea + " ms" );
-          
+         synchronized(doctorB)
+         {
+        	
+      	   System.out.println("merp");
+      	   doctorB.notify();
+       
+         }
         } catch(InterruptedException e) {
         }
      }
-     synchronized(doctorA)
-	   {
-		   	doctorA.notify();
-	   }
-     synchronized(doctorB)
-     {
-    	
-  	   System.out.println("merp");
-  	   doctorB.notify();
-   
-     }
+     
     
+     
    }
    
  }

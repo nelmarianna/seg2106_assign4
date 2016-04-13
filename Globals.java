@@ -8,6 +8,7 @@ public class Globals {
  boolean done = false;
  DoctorB doctorB;
  DoctorA doctorA;
+ Lab lab;
  
  public void set(Queue incoming){
   this.incoming=incoming;
@@ -50,6 +51,12 @@ public class Globals {
 }
 public DoctorA getDoctorA(){
  return doctorA;
+}
+public void setLab(Lab lab){
+this.lab =lab;
+}
+public Lab getLab(){
+return lab;
 }
 }
 

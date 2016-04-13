@@ -7,7 +7,7 @@ public class Emergency{
   Nurse nOne, nTwo, nThree;
   DoctorB doc;
   DoctorA docA;
-
+Lab lab;
   
   public Emergency(Patient[] p){
     
@@ -22,11 +22,13 @@ public class Emergency{
     vars.set(q);
     vars.setCW(dummy);
     vars.setNEA(dummy);
+    vars.setTest(dummy);
 
-
+    lab = new Lab(vars);
     doc = new DoctorB(vars);
+    docA= new DoctorA(vars); 
     nOne = new Nurse(vars);
-     docA= new DoctorA(vars);
+   
     vars.done = true;
 //   nTwo = new Nurse(vars);
   // nThree = new Nurse(vars);

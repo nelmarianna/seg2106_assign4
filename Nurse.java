@@ -18,12 +18,12 @@ DoctorA doctorA;
  Nurse(Globals vars)
  {
   
-
+	 
    this.vars=vars;
    (new Thread(this)).start();
    
    doctorB = vars.getDoctorB();
-   doctorA = vars.getDoctorA();
+	 doctorA = vars.getDoctorA();
 
  }
 
@@ -71,8 +71,7 @@ DoctorA doctorA;
  public void run() {
   
 
-   synchronized(doctorB){
-	   synchronized(doctorA){
+ 
    
    while(!vars.get().isEmpty()){
    
@@ -97,7 +96,6 @@ DoctorA doctorA;
      else
      {
    
-         
             try {
           Thread.sleep(classify*1000);
              vars.getCW().enqueue(p);
@@ -107,17 +105,20 @@ DoctorA doctorA;
         } catch(InterruptedException e) {
         }
      }
-     doctorA.notify();
-   }
-     System.out.println("merp");
-     doctorB.notify();
+     synchronized(doctorA)
+	   {
+		   	doctorA.notify();
+	   }
+     synchronized(doctorB)
+     {
+    	
+  	   System.out.println("merp");
+  	   doctorB.notify();
+   
+     }
     
-
-   }
-//     
    }
    
-  
  }
 }
 
